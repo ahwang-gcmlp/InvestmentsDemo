@@ -1,0 +1,35 @@
+﻿@using System.Configuration
+@using System.Security.Policy
+@using System.Web.Mvc.Html
+
+
+<div class="primaryNav">
+    <div ng-class="{ active:page.isPrimarySelected(1)}">
+        <div class="primaryTab">
+            <div class="tabWrap">
+                <a href="#" ng-click="page.selectPrimaryTab(1)">Evaluate</a>
+                </div>
+            <img src="/Styles/Images/caret.png"/>
+        </div>
+    </div>
+
+    <div ng-class="{ active:page.isPrimarySelected(2)}">
+        <div class="primaryTab">
+            <div class="tabWrap">
+                <a href="#" ng-click="page.selectPrimaryTab(2)">Research</a>
+                </div>
+            <img src="/Styles/Images/caret.png"/>
+        </div>
+    </div>
+
+    <div ng-class="{ active:page.isPrimarySelected(3)}">
+        <div class="primaryTab">
+            <div class="tabWrap">
+                <a href="#" ng-click="page.selectPrimaryTab(3)">Plan</a>
+            </div>
+
+            <img src="/Styles/Images/caret.png"/>
+        </div>
+    </div>
+
+</div>

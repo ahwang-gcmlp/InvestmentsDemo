@@ -1,0 +1,20 @@
+﻿@using System.Configuration
+
+<div class="footer">
+    <div class="inner-container">
+        <div class="footer-agreement">
+            <p>All reports, documents, data, tools, products, services or other information or content accessible through this Web Portal (collectively, "Web Portal Content") are highly conﬁdential. Only users authorized by Grosvenor Capital Management, L.P. or its aﬃliates (collectively, "GCM Grosvenor”) are authorized to access Web Portal Content through this Web Portal. Any unauthorized attempt to access Web Portal Content through this Web Portal will be deemed a violation of law and may be prosecuted.</p>
+            <p>Your access to Web Portal Content through this Web Portal is subject to the <a href="@ConfigurationManager.AppSettings["UserAgreementUrl"]">GCM Grosvenor Web Portal User Agreement</a> (the "User Agreement”). By accessing Web Portal Content through this Web Portal, you accept and agree to be bound by all of the terms and conditions of the User Agreement.</p>
+            <p>IF YOU ARE UNSURE OF YOUR AUTHORIZATION TO ACCESS WEB PORTAL CONTENT THROUGH THIS WEB PORTAL, OR IF YOU DO NOT ACCEPT AND AGREE TO BE BOUND BY ALL OF THE TERMS AND CONDITIONS OF THE USER AGREEMENT, PLEASE EXIT THIS LOGIN PAGE IMMEDIATELY.</p>
+        </div>
+        <div class="footer-links">
+                <div class="footer-sub-header">Contact Us</div>
+                <p><a href="mailto:websupport@gcmlp.com"><span class="icon-envelope"></span>&nbsp;&nbsp;websupport@gcmlp.com</a></p>
+                <p><span class="icon-phone"></span>&nbsp;&nbsp;(855) 426-9321</p>
+                <p><a href="http://www.grosvenorcapitalmanagement.com"><span class="icon-popup"></span>&nbsp;&nbsp;GCM Grosvenor Website</a></p>
+                <div class="footer-sub-header">Account</div>
+                <p><a href="@ConfigurationManager.AppSettings["ChangePasswordUrl"]">Change Password</a></p>
+                <p><a href="@ConfigurationManager.AppSettings["LogOffUrl"]">Log Off</a></p>
+		</div>
+    </div>
+</div>

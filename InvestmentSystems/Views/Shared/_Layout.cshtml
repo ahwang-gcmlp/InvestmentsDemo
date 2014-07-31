@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html id="ng-app" ng-app="AthenaDemo">
+<head>
+    <meta http-equiv="cache-control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-store, no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    @Html.Raw(NewRelic.Api.Agent.NewRelic.GetBrowserTimingHeader())
+    <title>GCM Systems</title>
+    <link rel="shortcut icon" href="/Styles/Images/logo_icon.PNG">
+
+    <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="/Scripts/app.js"></script>
+
+    @Styles.Render("~/Styles/VendorCSS")
+	@Styles.Render("~/Styles/MainCSS")
+    @RenderSection("Styles", false)
+	
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,500,700,800,300" rel="stylesheet" type="text/css" />
+
+	<!--[if IE]>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:400' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:100' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:500' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:700' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:800' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+	<link href='//fonts.googleapis.com/css?family=Open+Sans:600' rel='stylesheet' type='text/css'>
+	<![endif]-->
+
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/Scripts/vendor/html5shiv.js"></script>
+        <script src="/Scripts/vendor/respond.min.js"></script>
+
+    <![endif]-->
+</head>
+                           <body>
+                               <div class="page-wrap" ng-controller="FundController as fund"> 
+                                   @Html.Partial("Header")
+                                   @Html.Partial("Title")
+                                   <div ng-controller="PanelController as page">
+                                   @Html.Partial("primaryNav")
+                                       <div class="animate-show" ng-show="page.isPrimarySelected(1)">
+                                           @Html.Partial("EvalJumbo")
+                                           @Html.Partial("EvalSummary")
+                                       </div>
+                                       <div class="animate-show" ng-show="page.isPrimarySelected(2)">
+                                           @Html.Partial("ResJumbo")
+                                           @Html.Partial("ResSummary")
+                                           
+                                       </div>
+                                       <div class="animate-show" ng-show="page.isPrimarySelected(3)">
+                                           @Html.Partial("PlanJumbo")
+                                           @Html.Partial("PlanSummary")
+                                       </div>
+                                   </div>
+
+                                   @RenderBody()
+			
+                               </div>
+                               @Scripts.Render("~/Scripts/VendorJS")
+                               @RenderSection("Scripts", false)
+                               @Html.Raw(NewRelic.Api.Agent.NewRelic.GetBrowserTimingFooter())
+                           </body>
+</html>

@@ -1,0 +1,69 @@
+﻿@using System.Configuration
+@using System.Security.Policy
+@using System.Web.Mvc.Html
+
+@using Newtonsoft.Json
+
+<div class="Summaries" ng-controller="PanelController as panel">
+    <script>
+        var __evalPlanner = @Html.Raw(JsonConvert.SerializeObject(Model.EvalPlanner));
+        var __evalNormal = @Html.Raw(JsonConvert.SerializeObject(Model.EvalNormal));
+    </script>
+
+    <section>
+        <div class="secondNav">
+            <div class="panelEntry" ng-repeat="tab in evalTabs">
+                <div ng-class="{ active:panel.isSecondarySelected(tab)}">
+                    <a href ng-click="panel.selectSecondaryTab(tab)">{{tab.name}}</a>
+                </div>
+
+                <div ng-hide="panel.evalHideLine(tab, evalTabs, evalTabs2)">
+                    <hr/>
+                </div>
+            </div>
+
+            <div class="panelEntry" ng-repeat="tab in evalTabs2">
+                <div ng-class="{ active:panel.isSecondarySelected(tab)}">
+                    <a href ng-click="panel.selectSecondaryTab(tab)">{{tab.name}}</a>
+                </div>
+
+                <div ng-hide="panel.evalHideLine(tab, evalTabs, evalTabs2)">
+                    <hr/>
+                </div>
+            </div>
+
+            <br/>
+            
+        </div>
+        
+        <div class="summary" ng-repeat="tab in evalTabs">
+            <div class="innerSummary" ng-show="panel.isSecondarySelected(tab)">
+                <h2>{{tab.name}}</h2>
+                <p>{{tab.summary}}</p>
+                <a href="{{tab.link + selectedGrosvenorFundId.GrosvenorFundId + tab.link2}}" target="_blank">
+                    <img src="/Styles/Images/launch-icon.png"/> Launch Application
+                </a>
+
+            </div>
+        </div>
+
+        <div class="summary" ng-repeat="tab in evalTabs2">
+            <div class="innerSummary" ng-show="panel.isSecondarySelected(tab)">
+                <h2>{{tab.name}}</h2>
+                <p>{{tab.summary}}</p>
+
+                <a href="{{tab.link}}" target="_blank">
+                    <img src="/Styles/Images/launch-icon.png"/> Launch Application
+                </a>
+
+            </div>
+        </div>
+        
+        
+
+    </section>
+
+</div>
+
+
+

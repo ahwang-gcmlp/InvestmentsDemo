@@ -1,0 +1,49 @@
+﻿@using System.Configuration
+@using System.Web.Mvc.Html
+@{
+    var email = User.Identity.Name;
+}
+@using Newtonsoft.Json
+
+<div class="navbar">
+    <a class="brand light" title="Grosvenor" alt="Grosvenor">Grosvenor</a>
+
+    <div class="Selection">
+        <p>Select Grosvenor Fund:  &nbsp;&nbsp;</p>
+    <select id="grosvenorFund" ng-model="selectedGrosvenorFundId" ng-options="fund.Acronym for fund in grosvenorFundOptions track by fund.GrosvenorFundId">
+    </select>
+
+    
+    <script>
+        var __grosvenorFundOptions = @Html.Raw(JsonConvert.SerializeObject(Model.GrosvenorFundList));
+    </script>
+</div>
+    
+    @if (Request.IsAuthenticated)
+    {
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="navbar-link">Contact Us&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">
+                        <a href="mailto:websupport@gcmlp.com"><span class="icon-envelope"></span>&nbsp;&nbsp;websupport@gcmlp.com</a>
+                    </li>
+                    <li class="dropdown-item-no-link">
+                        <span class="icon-phone"></span>
+                        <span>&nbsp;&nbsp;(855)-GCM-WEB1</span>
+                    </li>
+                    <li class="dropdown-item-supplimental-text">(855)-426-9321</li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="navbar-link">@email&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="@ConfigurationManager.AppSettings["ChangePasswordUrl"]">Change Password</a></li>
+                    <li class="dropdown-item"><a href="@ConfigurationManager.AppSettings["HelpDocumentUrl"]">Help</a></li>
+                    @Html.Partial("AdminLinks")
+                </ul>
+            </li>
+            <li><a href="@ConfigurationManager.AppSettings["LogOffUrl"]" class="navbar-link">Log Off</a></li>
+        </ul>
+    }
+</div>
