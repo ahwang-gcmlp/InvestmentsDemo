@@ -261,12 +261,15 @@
     <Content Include="Scripts\knockout-2.2.0.js" />
     <Content Include="Styles\gcm-iconfonts-v4.css" />
     <Content Include="Styles\Images\caret.png" />
+    <Content Include="Styles\Images\Desktop_BG.jpg" />
     <Content Include="Styles\Images\evaluate.png" />
+    <Content Include="Styles\Images\Laptop_BG.jpg" />
     <Content Include="Styles\Images\launch-icon.png" />
     <Content Include="Styles\Images\logo_72dpi.png" />
     <Content Include="Styles\Images\logo_icon.PNG" />
     <Content Include="Styles\Images\plan.png" />
     <Content Include="Styles\Images\research.png" />
+    <Content Include="Styles\Images\Tablet_BG.jpg" />
     <Content Include="Styles\vendor\bootstrap.css" />
     <Content Include="Styles\vendor\bootstrap.min.css" />
     <None Include="Views\Shared\EvalJumbo.cshtml" />

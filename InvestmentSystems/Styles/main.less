@@ -237,8 +237,8 @@ html, body {
         background-color: @primaryColor;
         color: @titleColor;
         margin: 0px;
-        padding-bottom: 20px;
-        padding-top: 20px;
+        padding-bottom: 10px;
+        padding-top: 10px;
         width: 100%;
 
 
@@ -249,7 +249,8 @@ html, body {
                 font-family: "Open Sans", sans-serif;
                 font-weight: 100;
                 text-align: center;
-                font-size: 46px;
+                font-size: 44px;
+                letter-spacing: 16px;
             }
         }
 
@@ -260,56 +261,72 @@ html, body {
     }
 
 
-    .jumbotron
-    {
-        background-color: @jumboColor;
-        margin-bottom: 0px;
-        padding: 0px;
-        padding-bottom: 20px;
-        margin-top: 20px;
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+.jumbotron
+{
+    background-color: @jumboColor;
+    margin-bottom: 0px;
+    padding: 0px;
+
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    min-height: 230px;
+    overflow:hidden;
 
 
         .main-title
         {
             background-color: @jumboColor;
-            height: 246px;
-            text-align: center;
-            margin-bottom: 5%;
-            white-space: nowrap;
+            text-align: left;
+
+
+            margin-right: 5%;
+            margin-left: 10%;
+            width: 51%;
+            word-wrap: break-word;
+            display:inline-block;
+
 
 
             > h1
             {
-                font-size: 52px;
-                color: #000;
-                font-family: Georgia, serif;
-                padding-top: 20px;
-                padding-bottom: 5px;
+                font-size: 40px;
+                color: #e67e22;
+                font-family: 'Open Sans', sans-serif;
+                padding-top: 5%;
+                padding-bottom: 15px;
+                font-weight: 700;
             }
 
             > p
             {
-                font-family: "Open Sans", sans-serif;
+                font-family: 'Open Sans', sans-serif;
                 font-weight: 400;
-                color: #757575;
+                color: #e67e22;
                 line-height: 1.1;
-                padding-bottom: 15px;
             }
+        }
+
+        >img
+        {
+            display:inline-block;
+            float:right;
+            width: 33%;
+            min-height: 230px;
         }
 
         > hr
         {
             border-color: #000;
         }
-    }
+    
+}
 
     .primaryNav
     {
         margin-left: 33.3%;
         margin-top: 10px;
-        padding-bottom: 10px;
+        margin-bottom: -5px;
+        overflow:hidden;
 
         .primaryTab
         {
@@ -324,14 +341,15 @@ html, body {
                     color: #000;
                     font-size: 14px;
                     font-weight: bold;
-                    margin: 20px;
                     width: 100%;
+                    position:relative;
                 }
+                margin-bottom: -5px;
+                width: 100%;
             }
 
             > img
             {
-                margin-bottom: 20px;
                 opacity: 1;
             }
         }
@@ -348,12 +366,16 @@ html, body {
                         font-size: 14px;
                         font-weight: 700;
                     }
+
+                    
+
                 }
 
                 >img
                 {
                     opacity: 0;
                 }
+                
 
                 .tabWrap
                 {
@@ -369,23 +391,19 @@ html, body {
     .Summaries
     {
         padding-top: 20px;
-        margin-left: 150px\9;
+        margin-left: 10%;
 
-        >section
-        {
-            width: 890px;
-            margin: auto;
-        }
 
         .secondNav
         {
-            width: 270px;
+            width: 25%;
+            min-width:210px;
             line-height: .5;
             text-align: right;
             float: left;
             padding-bottom: 20px;
             font-size: 14px;
-            margin-top: 12px;
+            margin-top: 20px;
 
             .panelEntry
             {
@@ -428,8 +446,9 @@ html, body {
         .summary
         {
             float: left;
-            width: 550px;
+            width: 55%;
             margin-left: 50px;
+            margin-top: 10px;
             font-family: "Open Sans", sans-serif;
 
             .innerSummary
@@ -496,16 +515,23 @@ html, body {
     }
 
 
-    @media all and (max-width: 810px)
+    @media all and (max-width: 900px)
     {
+        .navbar
+        {
+            .Selection
+            {
+                margin-right: 30px;
+            }
+        }
         .jumbotron
         {
-            max-width: 800px;
+
 
             .main-title
             {
-                max-width: 800px;
-                margin: auto;
+                max-width: 850px;
+
 
                 > h1
                 {
@@ -516,6 +542,11 @@ html, body {
                 {
                     font-size: 18px;
                 }
+            }
+
+            >img
+            {
+                min-height: 230px;
             }
         }
 
@@ -558,117 +589,9 @@ html, body {
 
         body, html
         {
-            width: 800px;
+            width: 880px;
         }
     }
 
 
-    .footer
-    {
-        background-color: @primaryColor;
-        color: @lightGray;
-        font-weight: 100;
-        height: 220px;
-
-
-        .footer-agreement
-        {
-            float: left;
-            font-size: 11px;
-            line-height: 1.4;
-            margin: 20px 0 20px 20px;
-            text-align: left;
-            width: 70%;
-
-            p
-            {
-                margin: 0 0 10px 0;
-                padding: 0;
-            }
-        }
-
-        .footer-links
-        {
-            float: right;
-            font-size: 11px;
-            margin: 20px 20px 20px 0;
-            text-align: left;
-
-            a
-            {
-                color: #FFF;
-            }
-
-            .footer-sub-header
-            {
-                font-size: 12px;
-                font-weight: 300;
-                letter-spacing: 2.5px;
-                margin-bottom: 10px;
-                text-transform: uppercase;
-            }
-        }
-    }
-    /* IE specific styles */
-    .lt-ie9
-    {
-        .icon-localnav
-        {
-            margin-bottom: -1px;
-        }
-
-        .scrollableTable
-        {
-        }
-    }
-
-
-
-    @media (min-width: 768px)
-    {
-
-        .nav
-        {
-            > li
-            {
-                float: left;
-            }
-        }
-
-        .navbar-nav.navbar-right:last-child
-        {
-            margin-right: 0px;
-        }
-    }
-
-    @media (max-width: 1240px)
-    {
-        #risk-statistics
-        {
-            .series-name
-            {
-                width: 185px;
-            }
-        }
-    }
-
-    @media (max-width: 1120px) and (min-width: 770px)
-    {
-        #risk-statistics
-        {
-            .series-name
-            {
-                width: 125px;
-
-                a
-                {
-                    display: block;
-                }
-
-                .link-divider
-                {
-                    display: none;
-                }
-            }
-        }
-    }
+    
